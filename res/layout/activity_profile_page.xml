@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".ProfilePage" >
+	<LinearLayout
+            android:id="@+id/profile_card"
+            android:orientation="horizontal"
+	        android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+            	<LinearLayout
+	            android:id="@+id/left_column"
+	            android:layout_width="0dp"
+	            android:layout_weight="0.5"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+		            <TextView android:id="@+id/usr"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginTop="6dp"
+			        android:layout_marginBottom="6dp"/>
+		            <TextView android:id="@+id/date"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginTop="6dp"
+			        android:layout_marginBottom="6dp"/>
+		        </LinearLayout>
+		    <TextView android:id="@+id/empty"
+			        android:layout_width="0dp"
+	            	android:layout_weight="0.3"
+			        android:layout_height="wrap_content"
+			        android:layout_marginTop="6dp"
+			        android:layout_marginBottom="6dp"/>
+		    <ImageView android:id="@+id/status"
+	            android:layout_width="0dp"
+	            android:layout_weight="0.2"
+			    android:layout_height="50dp"
+			    android:layout_marginTop="6dp"
+			    android:layout_marginBottom="6dp"
+			    />
+    </LinearLayout>
+    <ImageView android:id="@+id/profile_pic"
+	    	android:layout_width="175dp"
+			android:layout_height="175dp"
+			android:layout_marginTop="20dp"
+			android:layout_marginBottom="6dp"
+			android:src="@drawable/user"
+			android:layout_gravity="center"/>
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:hapticFeedbackEnabled="true"
+        android:text="@string/assessment_status" />
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:hapticFeedbackEnabled="true"
+        android:text="@string/enquiry" />
+</LinearLayout>
