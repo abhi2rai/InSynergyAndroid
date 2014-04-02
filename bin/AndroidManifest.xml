@@ -41,6 +41,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.abc.insynergy.MainActivity" />
         </activity>
+        <activity
+            android:name="com.abc.insynergy.EnquiryPage"
+            android:label="@string/title_activity_enquiry_page"
+            android:parentActivityName="com.abc.insynergy.ProfilePage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.abc.insynergy.ProfilePage" />
+        </activity>
     </application>
 
 </manifest>

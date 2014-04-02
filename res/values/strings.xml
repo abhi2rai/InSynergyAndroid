@@ -9,5 +9,12 @@
     <string name="button_login">Login</string>
     <string name="title_activity_profile_page">Profile</string>
     <string name="assessment_status">Assessment Status</string>
-	<string name="enquiry">Enquiry</string>
+    <string name="enquiry">Enquiry</string>
+    <string name="title_activity_enquiry_page">Contact US</string>
+    <string name="to">Email ID</string>
+    <string name="message">Message</string>
+    <string name="subject">Subject</string>
+	<string name="send">Send</string>
+	<string name="name">Name</string>
+	<string name="num">Number</string>
 </resources>

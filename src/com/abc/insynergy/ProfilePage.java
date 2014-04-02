@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
@@ -100,6 +101,13 @@ public class ProfilePage extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	/** Called when the user clicks the Enquiry button */
+	public void enquiryPage(View view) {
+	    // Do something in response to button
+		Intent intent = new Intent(this, EnquiryPage.class);
+		startActivity(intent);
 	}
 
 }
