@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -30,6 +31,20 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+            	Intent intent = new Intent(this, SettingPage.class);
+            	startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+	
 	/** Called when the user clicks the Login button */
 	public void logIn(View view) {
 	    // Do something in response to button
@@ -43,8 +58,8 @@ public class MainActivity extends Activity {
 		}
 		else
 		{
-			//username.setText("");
-			//pwd.setText("");
+			username.setText("");
+			pwd.setText("");
 			Context context = getApplicationContext();
 			CharSequence text = "Incorrect Credentials!";
 			int duration = Toast.LENGTH_SHORT;
