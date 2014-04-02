@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/name"
-        android:inputType="text" />
+        android:inputType="text|textCapWords" />
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.75"
         android:gravity="top"
-        android:hint="@string/message" />
+        android:hint="@string/message|textCapWords" />
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
