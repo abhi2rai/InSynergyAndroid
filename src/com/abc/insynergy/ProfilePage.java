@@ -9,6 +9,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.MenuItem;
@@ -51,9 +52,9 @@ public class ProfilePage extends Activity {
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F1F4C"));     
         ab.setBackgroundDrawable(colorDrawable);
         
-        //Receive the Intent
-        Intent intent = getIntent();
-        String username = intent.getStringExtra(MainActivity.USR);
+        //Fetch Value from Shared Preference
+        SharedPreferences sharedPreferences = getSharedPreferences("UserDetails",0);
+        String username = sharedPreferences.getString("userName", "UserName");
         
         //Set the User Profile Variables
         TextView userTxt = (TextView) findViewById(R.id.usr);

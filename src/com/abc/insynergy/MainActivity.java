@@ -1,10 +1,13 @@
 package com.abc.insynergy;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Menu;
@@ -14,8 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	public final static String USR = "username";
-	public final static String PWD = "password";
+	public static final String PREFS_NAME = "UserDetails";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,7 +55,7 @@ public class MainActivity extends Activity {
 		EditText pwd = (EditText) findViewById(R.id.password);
 		if(username.getText().toString().equals("arun") && pwd.getText().toString().equals("insynergy"))
 		{
-			intent.putExtra(USR, username.getText().toString());
+			savePreferences("userName",username.getText().toString());
 			startActivity(intent);
 		}
 		else
@@ -66,6 +68,13 @@ public class MainActivity extends Activity {
 			Toast toast = Toast.makeText(context, text, duration);
 			toast.show();
 		}
+	}
+	
+	public void savePreferences(String key, String value){
+		SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME,0);
+		Editor editor = sharedPreferences.edit();
+		editor.putString(key, value);
+		editor.commit();
 	}
 
 }
