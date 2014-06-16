@@ -49,6 +49,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.abc.insynergy.ProfilePage" />
         </activity>
+        <activity
+            android:name="com.abc.insynergy.Assessment"
+            android:label="@string/title_activity_assessment"
+            android:parentActivityName="com.abc.insynergy.ProfilePage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.abc.insynergy.ProfilePage" />
+        </activity>
     </application>
 
 </manifest>

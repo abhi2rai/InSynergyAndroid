@@ -14,7 +14,14 @@
     <string name="to">Email</string>
     <string name="message">Message</string>
     <string name="subject">Subject</string>
-	<string name="send">Send</string>
-	<string name="name">Name</string>
-	<string name="num">Number</string>
+    <string name="send">Send</string>
+    <string name="name">Name</string>
+    <string name="num">Number</string>
+    <string name="beno">BE No.</string>
+    <string name="imp_name">Importer Name</string>
+    <string name="fs">F/S</string>
+    <string name="title_activity_assessment">Assessment</string>
+    <color name="info_color">#0F1F4C</color>
+    <color name="info_text_color">#FFFFFF</color>
+
 </resources>

@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="6dp"
+    tools:context=".Assessment">
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:background="@color/info_color" 
+        android:weightSum="1">
+ 
+        <TextView
+            android:id="@+id/total"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:textColor="@color/info_text_color"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+        <LinearLayout 
+		    android:orientation="vertical"
+		    android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:weightSum="3">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+		            android:id="@+id/totalFiling"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:textColor="@color/info_text_color"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+    		</TableRow>
+    		<TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+		            android:id="@+id/fileUnderFC"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:textColor="@color/info_text_color"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+    		</TableRow>
+    		<TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+		            android:id="@+id/fileUnderSC"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:textColor="@color/info_text_color"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+    		</TableRow>
+    	</LinearLayout>
+	</TableRow>
+	<TableLayout
+    android:id="@+id/tableLayout1"
+    android:layout_width="fill_parent"
+    android:paddingTop="6dp"
+    android:layout_height="fill_parent" >
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/info_color"
+        android:weightSum="6" >
+ 
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textColor="@color/info_text_color"
+            android:text="@string/beno"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+ 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:textColor="@color/info_text_color"
+            android:text="@string/imp_name"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/info_text_color"
+            android:text="@string/fs"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+    </TableRow>
+    </TableLayout>
+</LinearLayout>

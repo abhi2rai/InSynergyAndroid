@@ -110,5 +110,11 @@ public class ProfilePage extends Activity {
 		Intent intent = new Intent(this, EnquiryPage.class);
 		startActivity(intent);
 	}
+	
+	public void assessmentPage(View view) {
+	    // Do something in response to button
+		Intent intent = new Intent(this, Assessment.class);
+		startActivity(intent);
+	}
 
 }
