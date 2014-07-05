@@ -23,6 +23,9 @@ public class EnquiryPage extends Activity {
 		ActionBar ab = getActionBar(); 
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F1F4C"));     
         ab.setBackgroundDrawable(colorDrawable);
+        
+      //Adding slide-in and slide-out animation
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 	}
 
 	/**

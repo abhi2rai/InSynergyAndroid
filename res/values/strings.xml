@@ -12,6 +12,7 @@
     <string name="enquiry">Enquiry</string>
     <string name="title_activity_enquiry_page">Contact Us</string>
     <string name="to">Email</string>
+    <string name="switchText">Link Number</string>
     <string name="message">Message</string>
     <string name="subject">Subject</string>
     <string name="send">Send</string>
@@ -21,7 +22,11 @@
     <string name="imp_name">Importer Name</string>
     <string name="fs">F/S</string>
     <string name="title_activity_assessment">Assessment</string>
-    <color name="info_color">#0F1F4C</color>
-    <color name="info_text_color">#FFFFFF</color>
+    <color name="info_color">#C0C0C0</color>
+    <color name="info_text_color">#000000</color>
+    <color name="second_grey">#ffeeeeee</color>
+    <color name="card_white">#ffffffff</color>
+    <color name="card_shadow">#8c666666</color>
+    <color name="activity_background">#bfbfbf</color>
 
 </resources>

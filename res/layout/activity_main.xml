@@ -23,6 +23,23 @@
         android:layout_marginBottom="16dp"
         android:hint="@string/pwd_message" />
     
+    <TextView
+       	android:id="@+id/deviceNumber"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="16dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center"/>
+    
+    <Switch
+        android:id="@+id/deviceNumberToggle"
+        android:paddingLeft="7.5dp"
+        android:paddingRight="2.5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/switchText" />
+    
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

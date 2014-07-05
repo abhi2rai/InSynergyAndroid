@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 import android.support.v4.app.NavUtils;
 
 public class ProfilePage extends Activity {
@@ -52,10 +53,18 @@ public class ProfilePage extends Activity {
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F1F4C"));     
         ab.setBackgroundDrawable(colorDrawable);
         
-        //Fetch Value from Shared Preference
         SharedPreferences sharedPreferences = getSharedPreferences("UserDetails",0);
+        //Fetch Value from Shared Preference
         String username = sharedPreferences.getString("userName", "UserName");
+        String accountLink = sharedPreferences.getString("accountLinked", "false");
         
+        if(accountLink.equals("true")){
+        	getActionBar().setDisplayHomeAsUpEnabled(false);
+        }
+        
+        //Adding slide-in and slide-out animation
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+
         //Set the User Profile Variables
         TextView userTxt = (TextView) findViewById(R.id.usr);
         userTxt.setText("Welcome, "+username+"!");

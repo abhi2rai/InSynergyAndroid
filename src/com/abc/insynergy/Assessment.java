@@ -3,10 +3,18 @@ package com.abc.insynergy;
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
 public class Assessment extends Activity {
@@ -22,6 +30,9 @@ public class Assessment extends Activity {
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F1F4C"));     
         ab.setBackgroundDrawable(colorDrawable);
         
+      //Adding slide-in and slide-out animation
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+        
         TextView total = (TextView) findViewById(R.id.total);
         total.setText("TOTAL : 9373");
         
@@ -33,7 +44,56 @@ public class Assessment extends Activity {
         
         TextView fileUnderSC = (TextView) findViewById(R.id.fileUnderSC);
         fileUnderSC.setText("Files Under SC : 2073");
+        
+        TableLayout t1 = (TableLayout)findViewById(R.id.tableView1);
+        for(int i = 0;i < 25;i++){
+        	TableRow tr1 = new TableRow(this);
+        	tr1.setWeightSum(6);
+        	tr1.setLayoutParams(new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, 64));
+        	tr1.setBackgroundResource(R.drawable.shapes);
+        	TextView beno = new TextView(this);
+            beno.setText(String.valueOf(i+1));
+            beno.setGravity(Gravity.CENTER);
+            beno.setTextSize(28);
+            TextView imp_name = new TextView(this);
+            imp_name.setText("cust"+i);
+            imp_name.setGravity(Gravity.CENTER);
+            imp_name.setTextSize(28);
+            TextView fs = new TextView(this);
+            fs.setText("F");
+            fs.setGravity(Gravity.CENTER);
+            fs.setTextSize(28);
+            TableRow.LayoutParams col1Params = new TableRow.LayoutParams();
+            col1Params.height = LayoutParams.WRAP_CONTENT;
+            col1Params.width = 0;
+            col1Params.weight = 1.25f;
+            TableRow.LayoutParams col2Params = new TableRow.LayoutParams();
+            col2Params.height = LayoutParams.WRAP_CONTENT;
+            col2Params.width = 0;
+            col2Params.weight = 3.75f;
+            TableRow.LayoutParams col3Params = new TableRow.LayoutParams();
+            col3Params.height = LayoutParams.WRAP_CONTENT;
+            col3Params.width = 0;
+            col3Params.weight = 1f;
+            tr1.addView(beno, col1Params);
+            tr1.addView(imp_name, col2Params);
+            tr1.addView(fs, col3Params);
+            tr1.setClickable(true);
+            tr1.setOnClickListener(tablerowOnClickListener);
+            t1.addView(tr1);
+        }
 	}
+	
+	private OnClickListener tablerowOnClickListener = new OnClickListener() {
+        public void onClick(View v) {
+            //GET TEXT HERE
+        	Context context = getApplicationContext();
+			CharSequence text = "Take it Easy Man. Slow and Steady Wins the Race!";
+			int duration = Toast.LENGTH_LONG;
+			Toast toast = Toast.makeText(context, text, duration);
+			toast.show();
+        }
+    };
 
 	/**
 	 * Set up the {@link android.app.ActionBar}.
