@@ -21,6 +21,9 @@
     <string name="beno">BE No.</string>
     <string name="imp_name">Importer Name</string>
     <string name="fs">F/S</string>
+    <string name="ok">Yes</string>
+    <string name="cancel">No</string>
+    <string name="descimage">Logo</string>
     <string name="title_activity_assessment">Assessment</string>
     <color name="info_color">#C0C0C0</color>
     <color name="info_text_color">#000000</color>

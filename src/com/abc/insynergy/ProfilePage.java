@@ -16,7 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 import android.support.v4.app.NavUtils;
 
 public class ProfilePage extends Activity {
@@ -63,7 +62,7 @@ public class ProfilePage extends Activity {
         }
         
         //Adding slide-in and slide-out animation
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+        //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 
         //Set the User Profile Variables
         TextView userTxt = (TextView) findViewById(R.id.usr);

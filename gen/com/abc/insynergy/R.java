@@ -42,25 +42,26 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int offline=0x7f020001;
-        public static final int online=0x7f020002;
-        public static final int shapes=0x7f020003;
-        public static final int user=0x7f020004;
+        public static final int logo=0x7f020001;
+        public static final int offline=0x7f020002;
+        public static final int online=0x7f020003;
+        public static final int shapes=0x7f020004;
+        public static final int shapes_clicked=0x7f020005;
+        public static final int user=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f0c0015;
-        public static final int date=0x7f0c0011;
-        public static final int deviceNumber=0x7f0c000c;
-        public static final int deviceNumberToggle=0x7f0c000d;
-        public static final int empty=0x7f0c0012;
+        public static final int action_settings=0x7f0c0014;
+        public static final int date=0x7f0c0010;
+        public static final int empty=0x7f0c0011;
         public static final int fileUnderFC=0x7f0c0003;
         public static final int fileUnderSC=0x7f0c0004;
-        public static final int left_column=0x7f0c000f;
-        public static final int password=0x7f0c000b;
-        public static final int profile_card=0x7f0c000e;
-        public static final int profile_pic=0x7f0c0014;
+        public static final int left_column=0x7f0c000e;
+        public static final int logo=0x7f0c000a;
+        public static final int password=0x7f0c000c;
+        public static final int profile_card=0x7f0c000d;
+        public static final int profile_pic=0x7f0c0013;
         public static final int scrollView1=0x7f0c0008;
-        public static final int status=0x7f0c0013;
+        public static final int status=0x7f0c0012;
         public static final int tableRow1=0x7f0c0000;
         public static final int tableView1=0x7f0c0009;
         public static final int textView1=0x7f0c0005;
@@ -68,8 +69,8 @@ public final class R {
         public static final int textView3=0x7f0c0007;
         public static final int total=0x7f0c0001;
         public static final int totalFiling=0x7f0c0002;
-        public static final int username=0x7f0c000a;
-        public static final int usr=0x7f0c0010;
+        public static final int username=0x7f0c000b;
+        public static final int usr=0x7f0c000f;
     }
     public static final class layout {
         public static final int activity_assessment=0x7f030000;
@@ -90,6 +91,8 @@ public final class R {
         public static final int assessment_status=0x7f070007;
         public static final int beno=0x7f070011;
         public static final int button_login=0x7f070005;
+        public static final int cancel=0x7f070015;
+        public static final int descimage=0x7f070016;
         public static final int enquiry=0x7f070008;
         public static final int fs=0x7f070013;
         public static final int hello_world=0x7f070002;
@@ -97,35 +100,36 @@ public final class R {
         public static final int message=0x7f07000c;
         public static final int name=0x7f07000f;
         public static final int num=0x7f070010;
-        public static final int pref_default_display_name=0x7f07001a;
-        public static final int pref_description_social_recommendations=0x7f070018;
+        public static final int ok=0x7f070014;
+        public static final int pref_default_display_name=0x7f07001d;
+        public static final int pref_description_social_recommendations=0x7f07001b;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f07001c;
+        public static final int pref_header_data_sync=0x7f07001f;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f070016;
+        public static final int pref_header_general=0x7f070019;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f07001f;
-        public static final int pref_ringtone_silent=0x7f070022;
-        public static final int pref_title_add_friends_to_messages=0x7f07001b;
-        public static final int pref_title_display_name=0x7f070019;
-        public static final int pref_title_new_message_notifications=0x7f070020;
-        public static final int pref_title_ringtone=0x7f070021;
-        public static final int pref_title_social_recommendations=0x7f070017;
-        public static final int pref_title_sync_frequency=0x7f07001d;
-        public static final int pref_title_system_sync_settings=0x7f07001e;
-        public static final int pref_title_vibrate=0x7f070023;
+        public static final int pref_header_notifications=0x7f070022;
+        public static final int pref_ringtone_silent=0x7f070025;
+        public static final int pref_title_add_friends_to_messages=0x7f07001e;
+        public static final int pref_title_display_name=0x7f07001c;
+        public static final int pref_title_new_message_notifications=0x7f070023;
+        public static final int pref_title_ringtone=0x7f070024;
+        public static final int pref_title_social_recommendations=0x7f07001a;
+        public static final int pref_title_sync_frequency=0x7f070020;
+        public static final int pref_title_system_sync_settings=0x7f070021;
+        public static final int pref_title_vibrate=0x7f070026;
         public static final int pwd_message=0x7f070004;
         public static final int send=0x7f07000e;
         public static final int subject=0x7f07000d;
         public static final int switchText=0x7f07000b;
-        public static final int title_activity_assessment=0x7f070014;
+        public static final int title_activity_assessment=0x7f070017;
         public static final int title_activity_enquiry_page=0x7f070009;
         public static final int title_activity_profile_page=0x7f070006;
-        public static final int title_activity_setting_page=0x7f070015;
+        public static final int title_activity_setting_page=0x7f070018;
         public static final int to=0x7f07000a;
         public static final int user_message=0x7f070003;
     }

@@ -8,47 +8,41 @@
     android:paddingTop="46dp"
     tools:context=".MainActivity" >
 
-     <EditText android:id="@+id/username"
+    <ImageView
+        android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:hint="@string/user_message" />
-    
-    <EditText android:id="@+id/password"
+        android:layout_weight="0.14"
+        android:contentDescription="@string/descimage"
+        android:src="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
         android:layout_marginBottom="16dp"
-        android:hint="@string/pwd_message" />
-    
-    <TextView
-       	android:id="@+id/deviceNumber"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="16dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:gravity="center"/>
-    
-    <Switch
-        android:id="@+id/deviceNumberToggle"
-        android:paddingLeft="7.5dp"
-        android:paddingRight="2.5dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/user_message"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/switchText" />
-    
+        android:layout_marginBottom="16dp"
+        android:hint="@string/pwd_message"
+        android:inputType="textPassword" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:hapticFeedbackEnabled="true"
-        android:text="@string/button_login"
-        android:onClick="logIn" />
-
+        android:onClick="logIn"
+        android:text="@string/button_login" />
 
 </LinearLayout>

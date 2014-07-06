@@ -5,18 +5,20 @@ import com.abc.insynergy.R;
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.telephony.TelephonyManager;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +33,7 @@ public class MainActivity extends Activity {
         ab.setBackgroundDrawable(colorDrawable);
         
       //Adding slide-in and slide-out animation
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         
         
         String mPhoneNumber = getMobileNumber();    
@@ -42,9 +44,6 @@ public class MainActivity extends Activity {
         	Intent intent = new Intent(this, ProfilePage.class);
         	savePreferences("userName","arun");
 			startActivity(intent);
-        }else{
-        	TextView total = (TextView) findViewById(R.id.deviceNumber);
-            total.setText("Number on SIM : "+mPhoneNumber);
         }
 	}
 	public String getMobileNumber(){
@@ -75,20 +74,12 @@ public class MainActivity extends Activity {
 	/** Called when the user clicks the Login button */
 	public void logIn(View view) {
 	    // Do something in response to button
-		Intent intent = new Intent(this, ProfilePage.class);
 		EditText username = (EditText) findViewById(R.id.username);
 		EditText pwd = (EditText) findViewById(R.id.password);
 		if(username.getText().toString().equals("arun") && pwd.getText().toString().equals("insynergy"))
 		{
-			Switch toggle = (Switch) findViewById(R.id.deviceNumberToggle);
-			boolean on = toggle.isChecked();
-			if (on) {
-				String mPhoneNumber = getMobileNumber();
-				savePreferences("userNumber",mPhoneNumber);
-				savePreferences("accountLinked","true");
-			}
-			savePreferences("userName",username.getText().toString());
-			startActivity(intent);
+			String mPhoneNumber = getMobileNumber();
+			createAlertDialogue(username.getText().toString(),mPhoneNumber);
 		}
 		else
 		{
@@ -107,6 +98,36 @@ public class MainActivity extends Activity {
 		Editor editor = sharedPreferences.edit();
 		editor.putString(key, value);
 		editor.commit();
+	}
+	
+	public void createAlertDialogue(final String username,final String phonenumber){
+		final Intent intent = new Intent(this, ProfilePage.class);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	        	   savePreferences("userNumber",phonenumber);
+	       			savePreferences("accountLinked","true");
+	       			savePreferences("userName",username);
+	       			startActivity(intent);
+	           }
+	       });
+		builder.setCancelable(false);
+		builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	       		savePreferences("userName",username);
+	       		startActivity(intent);
+	           }
+	       });
+		TextView numDialog = new TextView(this);
+		numDialog.setText("Primary number on device: \n"+phonenumber+"\n\nDo you want to link it" +
+				" to the account?");
+		numDialog.setTextSize(20);
+		numDialog.setGravity(Gravity.CENTER_HORIZONTAL);
+		builder.setView(numDialog);
+		// create alert dialog
+		AlertDialog alertDialog = builder.create();
+		// show it
+		alertDialog.show();
 	}
 
 }

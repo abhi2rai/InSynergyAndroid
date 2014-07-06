@@ -31,7 +31,7 @@ public class Assessment extends Activity {
         ab.setBackgroundDrawable(colorDrawable);
         
       //Adding slide-in and slide-out animation
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+       // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
         
         TextView total = (TextView) findViewById(R.id.total);
         total.setText("TOTAL : 9373");
@@ -48,8 +48,13 @@ public class Assessment extends Activity {
         TableLayout t1 = (TableLayout)findViewById(R.id.tableView1);
         for(int i = 0;i < 25;i++){
         	TableRow tr1 = new TableRow(this);
+        	tr1.setId(i);
         	tr1.setWeightSum(6);
-        	tr1.setLayoutParams(new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, 64));
+        	TableLayout.LayoutParams tableRowParams=
+        			  new TableLayout.LayoutParams
+        			  (LayoutParams.MATCH_PARENT, 64);
+        	tableRowParams.setMargins(0, 6, 0, 0);
+        	tr1.setLayoutParams(tableRowParams);
         	tr1.setBackgroundResource(R.drawable.shapes);
         	TextView beno = new TextView(this);
             beno.setText(String.valueOf(i+1));
@@ -87,6 +92,9 @@ public class Assessment extends Activity {
 	private OnClickListener tablerowOnClickListener = new OnClickListener() {
         public void onClick(View v) {
             //GET TEXT HERE
+        	int id = v.getId();
+        	TableRow tr1 = (TableRow) findViewById(id);
+        	tr1.setBackgroundResource(R.drawable.shapes_clicked);
         	Context context = getApplicationContext();
 			CharSequence text = "Take it Easy Man. Slow and Steady Wins the Race!";
 			int duration = Toast.LENGTH_LONG;

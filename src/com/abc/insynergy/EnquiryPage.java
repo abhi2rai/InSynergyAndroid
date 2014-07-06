@@ -25,7 +25,7 @@ public class EnquiryPage extends Activity {
         ab.setBackgroundDrawable(colorDrawable);
         
       //Adding slide-in and slide-out animation
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+        //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 	}
 
 	/**
