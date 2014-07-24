@@ -52,23 +52,25 @@
 			android:src="@drawable/user"
 			android:layout_gravity="center"/>
     
-    <Button
-        android:layout_width="match_parent"
+    <Button android:id="@+id/assess_button"
+        android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:hapticFeedbackEnabled="true"
         android:text="@string/assessment_status"
+        android:drawableLeft="@drawable/assessment"
         android:onClick="assessmentPage" />
     
-    <Button
-        android:layout_width="match_parent"
+    <Button android:id="@+id/enquiry_button"
+        android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:hapticFeedbackEnabled="true"
         android:text="@string/enquiry"
+        android:drawableLeft="@drawable/enquiry"
         android:onClick="enquiryPage" />
 </LinearLayout>

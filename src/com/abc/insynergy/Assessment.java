@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -14,7 +17,6 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
 public class Assessment extends Activity {
@@ -32,18 +34,38 @@ public class Assessment extends Activity {
         
       //Adding slide-in and slide-out animation
        // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+        Typeface fontLight = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensed-Light.ttf");
+        Typeface fontReg = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensed-Regular.ttf");
+        
+        int actionBarTitle = Resources.getSystem().getIdentifier("action_bar_title", "id", "android");
+        TextView actionBarTitleView = (TextView) getWindow().findViewById(actionBarTitle);
+        if(actionBarTitleView != null){
+            actionBarTitleView.setTypeface(fontReg);
+        }
         
         TextView total = (TextView) findViewById(R.id.total);
         total.setText("TOTAL : 9373");
+        total.setTypeface(fontReg);
         
         TextView totalFiling = (TextView) findViewById(R.id.totalFiling);
         totalFiling.setText("Today's Filing : 3773");
+        totalFiling.setTypeface(fontReg);
         
         TextView fileUnderFC = (TextView) findViewById(R.id.fileUnderFC);
         fileUnderFC.setText("Files Under FC : 1073");
+        fileUnderFC.setTypeface(fontReg);
         
         TextView fileUnderSC = (TextView) findViewById(R.id.fileUnderSC);
         fileUnderSC.setText("Files Under SC : 2073");
+        fileUnderSC.setTypeface(fontReg);
+        
+        TextView benoHead = (TextView) findViewById(R.id.benoHead);
+        benoHead.setTypeface(fontReg);
+        TextView impNameHead = (TextView) findViewById(R.id.impNameHead);
+        impNameHead.setTypeface(fontReg);
+        TextView fsHead = (TextView) findViewById(R.id.fsHead);
+        fsHead.setTypeface(fontReg);
+		
         
         TableLayout t1 = (TableLayout)findViewById(R.id.tableView1);
         for(int i = 0;i < 25;i++){
@@ -60,14 +82,17 @@ public class Assessment extends Activity {
             beno.setText(String.valueOf(i+1));
             beno.setGravity(Gravity.CENTER);
             beno.setTextSize(28);
+            beno.setTypeface(fontLight);
             TextView imp_name = new TextView(this);
             imp_name.setText("cust"+i);
             imp_name.setGravity(Gravity.CENTER);
             imp_name.setTextSize(28);
+            imp_name.setTypeface(fontLight);
             TextView fs = new TextView(this);
             fs.setText("F");
             fs.setGravity(Gravity.CENTER);
             fs.setTextSize(28);
+            fs.setTypeface(fontLight);
             TableRow.LayoutParams col1Params = new TableRow.LayoutParams();
             col1Params.height = LayoutParams.WRAP_CONTENT;
             col1Params.width = 0;
@@ -96,10 +121,8 @@ public class Assessment extends Activity {
         	TableRow tr1 = (TableRow) findViewById(id);
         	tr1.setBackgroundResource(R.drawable.shapes_clicked);
         	Context context = getApplicationContext();
-			CharSequence text = "Take it Easy Man. Slow and Steady Wins the Race!";
-			int duration = Toast.LENGTH_LONG;
-			Toast toast = Toast.makeText(context, text, duration);
-			toast.show();
+			Intent intent = new Intent(context, EntryForm.class);
+			startActivity(intent);
         }
     };
 

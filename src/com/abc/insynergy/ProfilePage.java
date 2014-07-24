@@ -10,10 +10,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
@@ -52,6 +55,20 @@ public class ProfilePage extends Activity {
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F1F4C"));     
         ab.setBackgroundDrawable(colorDrawable);
         
+        Typeface fontLight = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensed-Light.ttf");
+        Typeface fontReg = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensed-Regular.ttf");
+        
+        int actionBarTitle = Resources.getSystem().getIdentifier("action_bar_title", "id", "android");
+        TextView actionBarTitleView = (TextView) getWindow().findViewById(actionBarTitle);
+        if(actionBarTitleView != null){
+            actionBarTitleView.setTypeface(fontReg);
+        }
+        
+        Button assess = (Button) findViewById(R.id.assess_button);
+        Button enq = (Button) findViewById(R.id.enquiry_button);
+        assess.setTypeface(fontReg);
+        enq.setTypeface(fontReg);
+        
         SharedPreferences sharedPreferences = getSharedPreferences("UserDetails",0);
         //Fetch Value from Shared Preference
         String username = sharedPreferences.getString("userName", "UserName");
@@ -66,12 +83,14 @@ public class ProfilePage extends Activity {
 
         //Set the User Profile Variables
         TextView userTxt = (TextView) findViewById(R.id.usr);
+        userTxt.setTypeface(fontLight);
         userTxt.setText("Welcome, "+username+"!");
         userTxt.setTextSize(20);
         
         //Set Date
         Date dt = new Date();
         TextView date = (TextView) findViewById(R.id.date);
+        date.setTypeface(fontLight);
         date.setText(dt.toString().substring(0,11));
         
         //Getting Device Status

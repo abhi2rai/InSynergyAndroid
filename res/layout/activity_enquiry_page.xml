@@ -8,21 +8,25 @@
     android:weightSum="1" 
     tools:context=".EnquiryPage" >
     <EditText
+        android:id="@+id/name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/name"
         android:inputType="text|textCapWords" />
     <EditText
+        android:id="@+id/to"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/to"
         android:inputType="textEmailAddress" />
     <EditText
+        android:id="@+id/num"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/num"
         android:inputType="phone" />
     <EditText
+        android:id="@+id/message"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="0.75"
@@ -30,6 +34,7 @@
         android:hint="@string/message"
         android:inputType="text|textCapWords|textMultiLine" />
     <Button
+        android:id="@+id/send"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

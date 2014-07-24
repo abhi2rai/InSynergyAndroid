@@ -24,12 +24,23 @@
     <string name="ok">Yes</string>
     <string name="cancel">No</string>
     <string name="descimage">Logo</string>
+    <string name="save_btn">Save</string>
+    <string name="in_rms">Assessed in RMS</string>
+    <string name="ufs">Under First Check</string>
+    <string name="final_assessed">Final Assessed</string>
+    <string name="prov_assessed">Prov Assessed</string>
+    <string name="duty_change">Duty Changed</string>
+    <string name="duty_amount">Duty Amount : </string>
+    <string name="cancel_btn">Cancel</string>
     <string name="title_activity_assessment">Assessment</string>
+
     <color name="info_color">#C0C0C0</color>
     <color name="info_text_color">#000000</color>
     <color name="second_grey">#ffeeeeee</color>
     <color name="card_white">#ffffffff</color>
     <color name="card_shadow">#8c666666</color>
     <color name="activity_background">#bfbfbf</color>
+
+    <string name="title_activity_entry_form">Entry Form</string>
 
 </resources>

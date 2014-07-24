@@ -11,13 +11,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.telephony.TelephonyManager;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,19 +35,34 @@ public class MainActivity extends Activity {
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F1F4C"));     
         ab.setBackgroundDrawable(colorDrawable);
         
-      //Adding slide-in and slide-out animation
-        //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        Typeface fontLight = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensed-Light.ttf");
+        Typeface fontReg = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensed-Regular.ttf");
         
+        int actionBarTitle = Resources.getSystem().getIdentifier("action_bar_title", "id", "android");
+        TextView actionBarTitleView = (TextView) getWindow().findViewById(actionBarTitle);
+        if(actionBarTitleView != null){
+            actionBarTitleView.setTypeface(fontReg);
+        }
+        
+        EditText username = (EditText) findViewById(R.id.username);
+        username.setTypeface(fontLight);
+		EditText pwd = (EditText) findViewById(R.id.password);
+		pwd.setTypeface(fontLight);
+		Button login = (Button) findViewById(R.id.login);
+        login.setTypeface(fontReg);
         
         String mPhoneNumber = getMobileNumber();    
         SharedPreferences sharedPreferences = getSharedPreferences("UserDetails",0);
         String userNumber = sharedPreferences.getString("userNumber", "UserNumber");
         
-        if(mPhoneNumber.equals(userNumber)){
-        	Intent intent = new Intent(this, ProfilePage.class);
-        	savePreferences("userName","arun");
-			startActivity(intent);
+        if(mPhoneNumber != null){
+        	if(mPhoneNumber.equals(userNumber)){
+            	Intent intent = new Intent(this, ProfilePage.class);
+            	savePreferences("userName","arun");
+    			startActivity(intent);
+            }
         }
+        
 	}
 	public String getMobileNumber(){
 		TelephonyManager tMgr = (TelephonyManager)getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
@@ -118,7 +136,9 @@ public class MainActivity extends Activity {
 	       		startActivity(intent);
 	           }
 	       });
+		Typeface fontLight = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensed-Light.ttf");
 		TextView numDialog = new TextView(this);
+		numDialog.setTypeface(fontLight);
 		numDialog.setText("Primary number on device: \n"+phonenumber+"\n\nDo you want to link it" +
 				" to the account?");
 		numDialog.setTextSize(20);
