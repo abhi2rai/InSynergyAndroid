@@ -10,7 +10,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/> 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.abc.insynergy.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,36 +27,45 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.abc.insynergy.ProfilePage"
+            android:name=".ProfilePage"
+            android:launchMode="singleTop"
             android:label="@string/title_activity_profile_page"
-            android:parentActivityName="com.abc.insynergy.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.abc.insynergy.MainActivity" />
         </activity>
         <activity
-            android:name="com.abc.insynergy.SettingPage"
+            android:name=".SettingPage"
             android:label="@string/title_activity_setting_page"
-            android:parentActivityName="com.abc.insynergy.MainActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.abc.insynergy.MainActivity" />
         </activity>
         <activity
-            android:name="com.abc.insynergy.EnquiryPage"
+            android:name=".EnquiryPage"
             android:label="@string/title_activity_enquiry_page"
-            android:parentActivityName="com.abc.insynergy.ProfilePage" >
+            android:parentActivityName=".ProfilePage" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.abc.insynergy.ProfilePage" />
         </activity>
         <activity
-            android:name="com.abc.insynergy.Assessment"
+            android:name=".Assessment"
             android:label="@string/title_activity_assessment"
-            android:parentActivityName="com.abc.insynergy.ProfilePage" >
+            android:parentActivityName=".ProfilePage" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.abc.insynergy.ProfilePage" />
+        </activity>
+        <activity
+            android:name=".EntryForm"
+            android:label="@string/title_activity_entry_form"
+            android:parentActivityName=".Assessment" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.abc.insynergy.Assessment" />
         </activity>
     </application>
 
